@@ -32,6 +32,7 @@ public class NeatMachine : MonoBehaviour {
         }
 
     }
+    
 
     IEnumerator GameLoop() {
         while (true)
@@ -64,7 +65,9 @@ public class NeatMachine : MonoBehaviour {
                 NeuralNetworks.Add(go2.GetComponent<NeuralNetwork>());
                 Debug.Log("Making best");
                 go2.GetComponent<NeuralNetwork>().LoadNeuralNetwork(SavedNeuralNetworks[0]);
+               
 
+                
 
 
                 for (int i = 0; i < NumberOfBests; i++)
@@ -110,9 +113,14 @@ public class NeatMachine : MonoBehaviour {
 
     public void SaveTheBest() {
         List<NeuralNetwork> SortedList = NeuralNetworks.OrderBy(o => o.fitness).ToList();
-        
+       
 
         SortedList.Reverse();
+        for (int i = 0; i < 3; i++)
+        {
+            Debug.Log(i + "'s fitness is: "+SortedList[i].fitness);
+        }
+
         for (int i = 0; i < NumberOfBests; i++)
         {
             if (SortedList[i].fitness> fitnessesofBest[4])
@@ -136,6 +144,11 @@ public class NeatMachine : MonoBehaviour {
         for (int i = 0; i < NumberOfBests; i++)
         {
             fitnessesofBest.Add(BestNeuralNetworks[i].fitness);
+        }
+
+        for (int i = 0; i < 3; i++)
+        {
+            Debug.Log("Best of the best:" + i + "'s fitness is: " + BestNeuralNetworks[i].fitness);
         }
 
         SavedNeuralNetworks.Clear();
