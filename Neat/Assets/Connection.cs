@@ -10,7 +10,7 @@ public class Connection {
 
     public void SetRandomWeight() {
         Weight = Random.value;
-
+        // Jakob er vildskab
     }
     public void SendInput(float inp) {
         neuronOut.AddInput(inp * Weight);
