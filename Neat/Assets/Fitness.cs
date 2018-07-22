@@ -16,7 +16,7 @@ public class Fitness : MonoBehaviour {
     void Start () {
 		
 	}
-	
+	// Fun with more gits :D
 	// Update is called once per frame
 	void Update () {
 		fitness = Vector2.Distance (Begin.position, Goal.position) - Vector2.Distance (Car.position,Goal.position);
