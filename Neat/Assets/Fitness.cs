@@ -17,6 +17,7 @@ public class Fitness : MonoBehaviour {
 		
 	}
 	// Fun with more gits :D
+    // Now with branching
 	// Update is called once per frame
 	void Update () {
 		fitness = Vector2.Distance (Begin.position, Goal.position) - Vector2.Distance (Car.position,Goal.position);
